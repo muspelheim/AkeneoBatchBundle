@@ -14,6 +14,10 @@ parameters:
     akeneo_batch.jobs_config:                                 ~
 
 services:
+    Akeneo\Tool\Bundle\BatchBundle\Command\:
+        resource: '../../Command'
+        tags: ['console.command']
+
     akeneo_batch.job_instance_factory:
         class: '%akeneo_batch.job_instance_factory.class%'
         arguments:
